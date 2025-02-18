@@ -52,7 +52,12 @@ DEFAULT_FILE_STORAGE = config('DEFAULT_FILE_STORAGE')
 
 # ===================================================================
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'downbase.tabishkhaqan.me',
+    'localhost',  # Optionally include localhost for local development
+    '127.0.0.1',  # Optionally include 127.0.0.1 for local development
+    # Add other allowed hosts as necessary
+]
 
 
 # Application definition
