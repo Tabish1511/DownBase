@@ -1,0 +1,27 @@
+<p>This is the home page</p>
+
+<p>Hello, {{ user.username }} </p>
+
+
+
+<h1>Images from S3</h1>
+    <!-- File Upload Form -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+
+    <!-- Display Images with Delete Buttons -->
+    <div>
+        {% for url in image_urls %}
+            <div style="margin: 10px;">
+                <img src="{{ url }}" alt="Image" style="width: 300px; height: auto;">
+                <form method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete_file" value="{{ url }}">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
