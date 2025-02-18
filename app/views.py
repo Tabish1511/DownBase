@@ -22,9 +22,6 @@ def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-
-        print(f'Username: {username}, Password: {password}')
-
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
@@ -58,11 +55,14 @@ def home(request):
                 return redirect('home')
         elif 'delete_file' in request.POST:  # Handle file deletion
             file_url = request.POST.get('delete_file')
-            file_name = file_url.split('/')[-1]
-            delete_file_from_s3(file_name)
 
-            # Delete metadata from the database
-            UserImage.objects.filter(user=request.user, file_name=file_name).delete()
+            user_prefix = f"user_{request.user.id}/"
+            file_name = file_url.split('/')[-1]
+            user_file_name = user_prefix + file_name
+
+            delete_file_from_s3(user_file_name)
+
+            UserImage.objects.filter(user=request.user, file_name=user_file_name).delete()
             return redirect('home')
     else:
         form = UploadFileForm()

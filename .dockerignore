@@ -1,0 +1,35 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment directories
+venv/
+.venv/
+
+# Database files
+*.sqlite3
+*.db
+
+# Logs
+*.log
+
+# Media files
+media/
+
+# Static files (if not needed in the image)
+staticfiles/
+
+# IDE or editor folders
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Other files
+*.egg-info/
+*.egg
+*.pyo
