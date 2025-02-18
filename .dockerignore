@@ -4,7 +4,9 @@ __pycache__/
 
 # Virtual environment directories
 venv/
+.env/
 .venv/
+env/
 
 # Database files
 *.sqlite3
