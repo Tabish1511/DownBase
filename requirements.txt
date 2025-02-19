@@ -5,3 +5,4 @@ python-decouple
 boto3
 gunicorn
 jsonschema
+requests
