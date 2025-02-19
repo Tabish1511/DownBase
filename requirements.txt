@@ -4,3 +4,4 @@ python-dotenv
 python-decouple
 boto3
 gunicorn
+jsonschema
