@@ -37,6 +37,7 @@ jobs:
           AWS_S3_REGION_NAME=${{ secrets.AWS_S3_REGION_NAME }}
           CLOUDFRONT_URL=${{ secrets.CLOUDFRONT_URL }}
           DEFAULT_FILE_STORAGE=${{ secrets.DEFAULT_FILE_STORAGE }}
+          VIRUSTOTAL_API_KEY=${{ secrets.VIRUSTOTAL_API_KEY }}
 
     - name: Verify Pushed Image
       run: docker pull tabish1511/downbase-docker-repo:latest
