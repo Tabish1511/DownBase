@@ -3,7 +3,7 @@ from django.contrib.auth import login, authenticate, logout
 from .forms import RegisterForm, UploadFileForm
 from .models import UserImage
 from django.contrib.auth.decorators import login_required
-from .utils import list_s3_images, upload_file_to_s3, delete_file_from_s3
+from .utils import upload_file_to_s3, delete_file_from_s3
 from downBase.settings import CLOUDFRONT_URL
 
 def register(request):
